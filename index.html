@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palductmaker - Duct Manufacturing & Installation Services | Bathinda</title>
+    <meta name="description" content="Palductmaker - Professional duct manufacturing and installation services in Bathinda, Punjab. 16+ years experience, 500+ projects completed.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ðŸ”§</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e63946;
+            --primary-dark: #c1121f;
+            --secondary: #1d3557;
+            --accent: #f4a261;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--light); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+
+        .top-bar { background: var(--dark); color: white; padding: 10px 0; font-size: 13px; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .top-bar a { color: white; text-decoration: none; transition: color 0.3s; }
+        .top-bar a:hover { color: var(--accent); }
+        .top-bar i { margin-right: 6px; color: var(--primary); }
+
+        .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0,0,0,0.08); transition: all 0.3s; }
+        .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 30px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-img{width:50px;height:50px;object-fit:contain;}
+        .logo-icon { width: 50px; height: 50px; background: var(--gradient); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; box-shadow: 0 4px 15px rgba(230,57,70,0.3); }
+        .logo-text { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 26px; color: var(--dark); letter-spacing: -0.5px; }
+        .logo-text span { color: var(--primary); }
+        .nav-links { display: flex; gap: 35px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 15px; position: relative; transition: color 0.3s; padding: 5px 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover::after { width: 100%; }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 24px; color: var(--dark); cursor: pointer; }
+
+        .hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15,23,42,0.85) 0%, rgba(29,53,87,0.75) 100%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 900px; padding: 0 20px; color: white; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 8px 20px; border-radius: 50px; font-size: 14px; font-weight: 500; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.2); animation: fadeInDown 1s ease; }
+        .hero-badge .pulse { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } }
+        .hero h1 { font-family: 'Poppins', sans-serif; font-size: clamp(36px, 5vw, 64px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; animation: fadeInUp 1s ease 0.2s both; }
+        .hero h1 span { color: var(--accent); position: relative; }
+        .hero h1 span::after { content: ''; position: absolute; bottom: 5px; left: 0; width: 100%; height: 8px; background: rgba(244,162,97,0.3); z-index: -1; }
+        .hero p { font-size: clamp(16px, 2vw, 20px); opacity: 0.9; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; animation: fadeInUp 1s ease 0.4s both; }
+
+        .action-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px; animation: fadeInUp 1s ease 0.6s both; }
+        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 12px; font-weight: 700; font-size: 16px; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; position: relative; overflow: hidden; }
+        .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s; }
+        .btn:hover::before { left: 100%; }
+        .btn-primary { background: var(--gradient); color: white; box-shadow: 0 10px 30px rgba(230,57,70,0.4); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(230,57,70,0.5); }
+        .btn-whatsapp { background: #25d366; color: white; box-shadow: 0 10px 30px rgba(37,211,102,0.3); }
+        .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(37,211,102,0.4); }
+        .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; transform: translateY(-3px); }
+
+        .stats-bar { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; animation: fadeInUp 1s ease 0.8s both; }
+        .stat-item { text-align: center; padding: 20px 30px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 16px; border: 1px solid rgba(255,255,255,0.15); min-width: 160px; transition: all 0.3s; }
+        .stat-item:hover { transform: translateY(-5px); background: rgba(255,255,255,0.15); }
+        .stat-number { font-family: 'Poppins', sans-serif; font-size: 36px; font-weight: 800; color: var(--accent); display: block; }
+        .stat-label { font-size: 14px; opacity: 0.8; margin-top: 5px; }
+
+        .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; animation: bounce 2s infinite; }
+        .scroll-indicator i { color: white; font-size: 24px; opacity: 0.7; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
+
+        section { padding: 100px 0; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 30px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag { display: inline-block; background: rgba(230,57,70,0.1); color: var(--primary); padding: 6px 18px; border-radius: 50px; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .section-title { font-family: 'Poppins', sans-serif; font-size: clamp(28px, 3vw, 42px); font-weight: 800; color: var(--dark); margin-bottom: 15px; }
+        .section-subtitle { color: var(--gray); font-size: 18px; max-width: 600px; margin: 0 auto; }
+
+        .about { background: white; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-image { position: relative; }
+        .about-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); transition: transform 0.3s; }
+        .about-image:hover img { transform: scale(1.02); }
+        .experience-badge { position: absolute; bottom: -20px; right: -20px; background: var(--gradient); color: white; padding: 25px 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(230,57,70,0.3); animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .experience-badge .num { font-family: 'Poppins', sans-serif; font-size: 36px; font-weight: 800; display: block; }
+        .experience-badge .text { font-size: 14px; opacity: 0.9; }
+        .about-content h3 { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 700; margin-bottom: 20px; color: var(--dark); }
+        .about-content p { color: var(--gray); line-height: 1.8; margin-bottom: 25px; font-size: 16px; }
+        .owner-info { display: flex; align-items: center; gap: 20px; padding: 20px; background: var(--light); border-radius: 16px; margin-top: 30px; border-left: 4px solid var(--primary); }
+        .owner-info img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); }
+        .owner-details h4 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; color: var(--dark); }
+        .owner-details p { color: var(--primary); font-weight: 600; margin: 0; }
+        .feature-list { list-style: none; margin-top: 25px; }
+        .feature-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 16px; color: var(--dark); }
+        .feature-list li i { width: 28px; height: 28px; background: rgba(230,57,70,0.1); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+
+        .services { background: linear-gradient(180deg, var(--light) 0%, white 100%); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: white; border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: all 0.4s; border: 1px solid rgba(0,0,0,0.05); position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gradient); transform: scaleX(0); transition: transform 0.4s; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon { width: 80px; height: 80px; background: linear-gradient(135deg, rgba(230,57,70,0.1) 0%, rgba(193,18,31,0.1) 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 32px; color: var(--primary); transition: all 0.3s; }
+        .service-card:hover .service-icon { background: var(--gradient); color: white; transform: rotateY(360deg); }
+        .service-card h3 { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 15px; color: var(--dark); }
+        .service-card p { color: var(--gray); line-height: 1.7; font-size: 15px; }
+
+        .why-choose { background: var(--dark); color: white; position: relative; overflow: hidden; }
+        .why-choose::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(230,57,70,0.1) 0%, transparent 70%); border-radius: 50%; }
+        .why-choose .section-title, .why-choose .section-subtitle { color: white; }
+        .why-choose .section-tag { background: rgba(255,255,255,0.1); color: var(--accent); }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .why-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .why-features { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .why-feature { display: flex; gap: 15px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s; }
+        .why-feature:hover { background: rgba(255,255,255,0.1); transform: translateX(5px); }
+        .why-feature i { width: 45px; height: 45px; background: var(--gradient); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+        .why-feature h4 { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 600; margin-bottom: 5px; }
+        .why-feature p { font-size: 14px; opacity: 0.7; line-height: 1.5; }
+
+        .shop { background: white; }
+        .shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .shop-image { position: relative; }
+        .shop-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .shop-image::after { content: ''; position: absolute; top: 20px; left: 20px; right: -20px; bottom: -20px; border: 3px solid var(--primary); border-radius: 20px; z-index: -1; }
+        .shop-content h3 { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 700; margin-bottom: 20px; color: var(--dark); }
+        .shop-content p { color: var(--gray); line-height: 1.8; margin-bottom: 20px; font-size: 16px; }
+        .shop-features { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
+        .shop-feature { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--light); border-radius: 10px; font-size: 14px; font-weight: 600; color: var(--dark); }
+        .shop-feature i { color: var(--primary); }
+
+        .gallery { background: var(--light); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .gallery-item { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
+        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); display: flex; align-items: flex-end; padding: 25px; opacity: 0; transition: opacity 0.3s; }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay h4 { color: white; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 600; }
+        .gallery-overlay p { color: rgba(255,255,255,0.8); font-size: 14px; }
+
+        .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
+        .lightbox.active { display: flex; }
+        .lightbox img { max-width: 90%; max-height: 90vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; background: none; border: none; }
+
+        .cta { background: var(--gradient); position: relative; overflow: hidden; padding: 80px 0; }
+        .cta::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+        .cta::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+        .cta-content { text-align: center; color: white; position: relative; z-index: 1; }
+        .cta h2 { font-family: 'Poppins', sans-serif; font-size: clamp(28px, 3vw, 42px); font-weight: 800; margin-bottom: 15px; }
+        .cta p { font-size: 18px; opacity: 0.9; margin-bottom: 30px; }
+        .cta-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .cta .btn-white { background: white; color: var(--primary); }
+        .cta .btn-white:hover { background: var(--light); }
+        .cta .btn-outline-white { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
+        .cta .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+        .footer { background: var(--dark); color: white; padding: 80px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 60px; }
+        .footer-brand .logo-text { color: white; margin-bottom: 20px; }
+        .footer-brand p { color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 25px; }
+        .footer-brand .footer-logo-icon{width:60px;height:60px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}.footer-logo-img{width:60px;height:60px;object-fit:contain;}
+        .footer-title { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 25px; color: white; position: relative; padding-bottom: 10px; }
+        .footer-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--primary); border-radius: 2px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: all 0.3s; display: flex; align-items: center; gap: 8px; }
+        .footer-links a:hover { color: var(--accent); padding-left: 5px; }
+        .footer-links a i { font-size: 12px; color: var(--primary); }
+        .footer-contact li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; color: rgba(255,255,255,0.7); }
+        .footer-contact li i { width: 36px; height: 36px; background: rgba(230,57,70,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+        .footer-contact a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+        .footer-contact a:hover { color: var(--accent); }
+        .map-container { border-radius: 16px; overflow: hidden; margin-top: 15px; border: 2px solid rgba(255,255,255,0.1); }
+        .map-container iframe { width: 100%; height: 200px; border: none; display: block; }
+        .social-links { display: flex; gap: 12px; margin-top: 20px; }
+        .social-links a { width: 42px; height: 42px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s; font-size: 16px; }
+        .social-links a:hover { background: var(--primary); transform: translateY(-3px); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 25px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .footer-bottom p { color: rgba(255,255,255,0.5); font-size: 14px; }
+        .footer-bottom-links { display: flex; gap: 25px; }
+        .footer-bottom-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .footer-bottom-links a:hover { color: var(--accent); }
+
+        .floating-buttons { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+        .float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; text-decoration: none; box-shadow: 0 5px 20px rgba(0,0,0,0.3); transition: all 0.3s; position: relative; }
+        .float-btn:hover { transform: scale(1.1); }
+        .float-btn.whatsapp { background: #25d366; }
+        .float-btn.call { background: var(--primary); }
+        .float-btn.top { background: var(--dark); opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .float-btn.top.visible { opacity: 1; pointer-events: auto; }
+        .float-btn .tooltip { position: absolute; right: 65px; background: var(--dark); color: white; padding: 6px 12px; border-radius: 6px; font-size: 13px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .float-btn:hover .tooltip { opacity: 1; }
+
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 9998; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
+        .modal-overlay.active { display: flex; }
+        .modal { background: white; border-radius: 24px; padding: 40px; max-width: 500px; width: 100%; position: relative; animation: modalIn 0.4s ease; }
+        @keyframes modalIn { from { opacity: 0; transform: scale(0.9) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        .modal-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--gray); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .modal-close:hover { background: var(--light); color: var(--dark); }
+        .modal h3 { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 10px; color: var(--dark); }
+        .modal p { color: var(--gray); margin-bottom: 25px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; color: var(--dark); }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 15px; font-family: 'Inter', sans-serif; transition: all 0.3s; outline: none; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(230,57,70,0.1); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .btn-submit { width: 100%; padding: 16px; background: var(--gradient); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(230,57,70,0.3); }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 1024px) {
+            .about-grid, .why-grid, .shop-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 80px; left: 0; right: 0; background: white; flex-direction: column; padding: 20px; gap: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            .nav-links.active { display: flex; }
+            .nav-links li { border-bottom: 1px solid #f1f5f9; }
+            .nav-links a { display: block; padding: 15px 0; }
+            .mobile-menu-btn { display: block; }
+            .stats-bar { gap: 15px; }
+            .stat-item { min-width: 130px; padding: 15px 20px; }
+            .why-features { grid-template-columns: 1fr; }
+            .shop-features { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; }
+            .action-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 280px; justify-content: center; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .cta .btn { width: 100%; max-width: 280px; }
+            .experience-badge { right: 10px; bottom: -10px; padding: 15px 20px; }
+            .experience-badge .num { font-size: 28px; }
+        }
+        @media (max-width: 480px) {
+            .hero { min-height: 600px; }
+            .stat-number { font-size: 28px; }
+            .stat-label { font-size: 12px; }
+            section { padding: 60px 0; }
+            .nav-container { padding: 0 15px; }
+            .container { padding: 0 15px; }
+        }
+        #preloader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+}
+
+#preloader.hide{
+    opacity:0;
+    visibility:hidden;
+    transition:.5s;
+}
+
+#preloader img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+    </style>
+</head>
+<body>
+    <!-- PRELOADER -->
+<div id="preloader">
+    <img id="preloaderImage" src="" alt="Loading">
+</div>
+
+    <div class="top-bar">
+        <div class="container">
+            <div>
+                <a href="mailto:palductmaker@gmail.com"><i class="fas fa-envelope"></i>palductmaker@gmail.com</a>
+                <span style="margin: 0 15px; opacity: 0.3;">|</span>
+                <a href="tel:+916283498760"><i class="fas fa-phone"></i>62834-98760</a>
+            </div>
+            <div>
+                <i class="fas fa-map-marker-alt"></i>5 MCB-Z-6-16546, Street No. 37, Parasram Nagar, Bathinda, Punjab 151001
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Palductmaker Logo" class="logo-img">
+                <div class="logo-text">pal<span>ductmaker</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#shop">Our Shop</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge"><span class="pulse"></span>Professional Duct Services in Bathinda</div>
+            <h1>Premium Duct <span>Manufacturing</span> & Installation</h1>
+            <p>Leading ductwork solutions provider in Punjab. We deliver precision-engineered HVAC duct systems for residential, commercial, and industrial projects.</p>
+            <div class="action-buttons">
+                <a href="tel:+916283498760" class="btn btn-primary"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="https://wa.me/916283498760" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <button class="btn btn-outline" onclick="openModal()"><i class="fas fa-file-invoice"></i> Get Quote</button>
+            </div>
+            <div class="stats-bar">
+                <div class="stat-item"><span class="stat-number">16+</span><div class="stat-label">Years Experience</div></div>
+                <div class="stat-item"><span class="stat-number">500+</span><div class="stat-label">Projects Done</div></div>
+                <div class="stat-item"><span class="stat-number">98%</span><div class="stat-label">Satisfaction Rate</div></div>
+                <div class="stat-item"><span class="stat-number">50+</span><div class="stat-label">Happy Clients</div></div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+    </section>
+    
+<section class="about" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">About Us</div>
+                <h2 class="section-title">Trusted Duct Experts Since 2008</h2>
+                <p class="section-subtitle">Building quality air distribution systems with precision and care</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="owner.png" alt="Shri Arvind Kumar - Contractor">
+                    <div class="experience-badge"><span class="num">16+</span><span class="text">Years of<br>Excellence</span></div>
+                </div>
+                <div class="about-content reveal">
+                    <h3>Your Reliable Partner for All Duct Work Needs</h3>
+                    <p>Palductmaker is a premier duct manufacturing and installation company based in Bathinda, Punjab. With over 16 years of hands-on experience, we specialize in designing, fabricating, and installing high-quality ductwork systems for HVAC, ventilation, and industrial applications.</p>
+                    <p>Our commitment to quality craftsmanship, timely delivery, and customer satisfaction has made us the preferred choice for contractors, builders, and businesses across Punjab.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Custom Duct Fabrication (GI, SS, Aluminium)</li>
+                        <li><i class="fas fa-check"></i> HVAC Duct Installation & Maintenance</li>
+                        <li><i class="fas fa-check"></i> Industrial Ventilation Systems</li>
+                        <li><i class="fas fa-check"></i> Fire Rated Ductwork Solutions</li>
+                        <li><i class="fas fa-check"></i> On-Site Duct Installation Services</li>
+                    </ul>
+                    <div class="owner-info">
+                        <img src="owner.png" alt="Shri Arvind Kumar">
+                        <div class="owner-details">
+                            <h4>Contractor Shri Arvind Kumar</h4>
+                            <p>Founder & Managing Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== CUSTOMER REVIEWS ===== -->
+<section class="reviews-section">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-tag">Customer Reviews</div>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">
+                Trusted by customers across Punjab.
+            </p>
+        </div>
+
+        <div class="taggbox"
+             style="width:100%;height:100%;overflow:auto;"
+             data-widget-id="329238"
+             data-website="1">
+        </div>
+    </div>
+</section>
+
+<script src="https://widget.taggbox.com/embed.min.js" type="text/javascript"></script>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Services</div>
+                <h2 class="section-title">Comprehensive Duct Solutions</h2>
+                <p class="section-subtitle">From fabrication to installation, we handle it all</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-industry"></i></div>
+                    <h3>Duct Manufacturing</h3>
+                    <p>Precision fabrication of GI, SS, and aluminium ducts using advanced machinery. Custom sizes and shapes to fit your exact specifications.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Duct Installation</h3>
+                    <p>Professional on-site installation by experienced technicians. Proper sealing, insulation, and testing for optimal performance.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-wind"></i></div>
+                    <h3>HVAC Systems</h3>
+                    <p>Complete heating, ventilation, and air conditioning ductwork for residential, commercial, and industrial buildings.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-fire-extinguisher"></i></div>
+                    <h3>Fire Rated Ducts</h3>
+                    <p>Fire-resistant ductwork solutions meeting all safety standards and building codes for commercial and industrial applications.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Duct Repair & Maintenance</h3>
+                    <p>Regular maintenance, cleaning, and repair services to keep your duct systems running efficiently and extend their lifespan.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Custom Fabrication</h3>
+                    <p>Specialized duct components including reducers, elbows, transitions, dampers, and custom fittings for unique project requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose" id="whychoose">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Why Choose Us</div>
+                <h2 class="section-title">The Palductmaker Advantage</h2>
+                <p class="section-subtitle">What sets us apart from the competition</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-image reveal"><img src="choose.png" alt="Why Choose Palductmaker"></div>
+                <div class="why-features">
+                    <div class="why-feature reveal">
+                        <i class="fas fa-award"></i>
+                        <div><h4>16+ Years Experience</h4><p>Decades of expertise in duct manufacturing and installation across Punjab.</p></div>
+                    </div>
+                    <div class="why-feature reveal">
+                        <i class="fas fa-certificate"></i>
+                        <div><h4>Quality Materials</h4><p>Only premium-grade GI, SS, and aluminium sheets for lasting durability.</p></div>
+                    </div>
+                    <div class="why-feature reveal">
+                        <i class="fas fa-clock"></i>
+                        <div><h4>Timely Delivery</h4><p>We respect deadlines and ensure on-time project completion every time.</p></div>
+                    </div>
+                    <div class="why-feature reveal">
+                        <i class="fas fa-rupee-sign"></i>
+                        <div><h4>Competitive Pricing</h4><p>Best market rates without compromising on quality or service standards.</p></div>
+                    </div>
+                    <div class="why-feature reveal">
+                        <i class="fas fa-users"></i>
+                        <div><h4>Expert Team</h4><p>Skilled technicians and fabricators with extensive industry knowledge.</p></div>
+                    </div>
+                    <div class="why-feature reveal">
+                        <i class="fas fa-headset"></i>
+                        <div><h4>24/7 Support</h4><p>Round-the-clock customer support for all your ductwork emergencies.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop" id="shop">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Shop</div>
+                <h2 class="section-title">Visit Our Workshop</h2>
+                <p class="section-subtitle">State-of-the-art manufacturing facility in Bathinda</p>
+            </div>
+            <div class="shop-grid">
+                <div class="shop-content reveal">
+                    <h3>Modern Fabrication Facility</h3>
+                    <p>Our workshop at 5 MCB-Z-6-16546, Street No. 37, Parasram Nagar, Bathinda is equipped with the latest duct manufacturing machinery including CNC plasma cutters, auto seamers, and rolling machines. We maintain strict quality control standards at every stage of production.</p>
+                    <p>From raw material inspection to final product delivery, our team ensures every duct meets industry specifications. We stock a wide range of standard sizes and can fabricate custom orders with quick turnaround times.</p>
+                    <div class="shop-features">
+                        <div class="shop-feature"><i class="fas fa-check-circle"></i><span>CNC Plasma Cutting</span></div>
+                        <div class="shop-feature"><i class="fas fa-check-circle"></i><span>Auto Seaming Machine</span></div>
+                        <div class="shop-feature"><i class="fas fa-check-circle"></i><span>Sheet Rolling Unit</span></div>
+                        <div class="shop-feature"><i class="fas fa-check-circle"></i><span>Quality Testing Lab</span></div>
+                        <div class="shop-feature"><i class="fas fa-check-circle"></i><span>Bulk Stock Available</span></div>
+                        <div class="shop-feature"><i class="fas fa-check-circle"></i><span>Custom Fabrication</span></div>
+                    </div>
+                </div>
+                <div class="shop-image reveal"><img src="shop.png" alt="Palductmaker Workshop"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Work</div>
+                <h2 class="section-title">Project Gallery</h2>
+                <p class="section-subtitle">Showcasing our finest ductwork projects</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal" onclick="openLightbox('gallery1.jpg')"><img src="gallery1.jpg" alt="Duct Project 1"><div class="gallery-overlay"><div><h4>Commercial HVAC Installation</h4><p>Large-scale ductwork project</p></div></div></div>
+                <div class="gallery-item reveal" onclick="openLightbox('gallery2.jpg')"><img src="gallery2.jpg" alt="Duct Project 2"><div class="gallery-overlay"><div><h4>Industrial Ventilation</h4><p>Factory duct system</p></div></div></div>
+                <div class="gallery-item reveal" onclick="openLightbox('gallery3.jpg')"><img src="gallery3.jpg" alt="Duct Project 3"><div class="gallery-overlay"><div><h4>Residential Ductwork</h4><p>Home HVAC solution</p></div></div></div>
+                <div class="gallery-item reveal" onclick="openLightbox('gallery4.jpg')"><img src="gallery4.jpg" alt="Duct Project 4"><div class="gallery-overlay"><div><h4>Custom Fabrication</h4><p>Precision duct components</p></div></div></div>
+                <div class="gallery-item reveal" onclick="openLightbox('gallery5.jpg')"><img src="gallery5.jpg" alt="Duct Project 5"><div class="gallery-overlay"><div><h4>Fire Rated Ducts</h4><p>Safety compliant installation</p></div></div></div>
+                <div class="gallery-item reveal" onclick="openLightbox('gallery6.jpg')"><img src="gallery6.jpg" alt="Duct Project 6"><div class="gallery-overlay"><div><h4>Workshop Production</h4><p>Behind the scenes</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Get a free quote for your duct manufacturing and installation needs</p>
+                <div class="cta-buttons">
+                    <a href="tel:+916283498760" class="btn btn-white"><i class="fas fa-phone"></i> Call: 62834-98760</a>
+                    <a href="https://wa.me/916283498760" target="_blank" class="btn btn-outline-white"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                    <button class="btn btn-outline-white" onclick="openModal()"><i class="fas fa-file-invoice"></i> Request Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-icon"><img src="logo.png" alt="Palductmaker Logo" class="footer-logo-img"></div>
+                    <div class="logo-text" style="font-size: 24px;">pal<span>ductmaker</span></div>
+                    <p>Leading duct manufacturing and installation services in Bathinda, Punjab. Delivering quality HVAC solutions since 2008 with precision, reliability, and customer satisfaction.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/916283498760"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-sections">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#shop"><i class="fas fa-chevron-right"></i> Our Shop</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-sections">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Duct Manufacturing</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Duct Installation</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> HVAC Systems</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Fire Rated Ducts</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Duct Repair</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Custom Fabrication</a></li>
+                    </ul>
+                </div>
+                <div class="footer-sections">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-user"></i><div><strong>Contractor</strong><br>Shri Arvind Kumar</div></li>
+                        <li><i class="fas fa-phone"></i><div><a href="tel:+916283498760">62834-98760</a></div></li>
+                        <li><i class="fas fa-envelope"></i><div><a href="mailto:palductmaker@gmail.com">palductmaker@gmail.com</a></div></li>
+                        <li><i class="fas fa-map-marker-alt"></i><div>5 MCB-Z-6-16546, Street No. 37,<br>Parasram Nagar, Bathinda, Punjab 151001</div></li>
+                    </ul>
+                    <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4354.383609516739!2d74.91284157647526!3d30.220120474835664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391733205688cfbd%3A0xd7bc3615f56f8778!2sPAL%20DUCT%20MAKER!5e1!3m2!1sen!2sin!4v1782721594602!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>                </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Â© 2026 Palductmaker. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="https://wa.me/916283498760" target="_blank" class="float-btn whatsapp"><i class="fab fa-whatsapp"></i><span class="tooltip">Chat on WhatsApp</span></a>
+        <a href="tel:+916283498760" class="float-btn call"><i class="fas fa-phone"></i><span class="tooltip">Call Now</span></a>
+        <a href="#home" class="float-btn top" id="backToTop"><i class="fas fa-arrow-up"></i><span class="tooltip">Back to Top</span></a>
+    </div>
+
+    <div class="modal-overlay" id="quoteModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <h3>Get a Free Quote</h3>
+            <p>Fill in your details and we will get back to you shortly</p>
+            <form onsubmit="handleQuote(event)">
+                <div class="form-group"><label>Full Name</label><input type="text" placeholder="Enter your name" required></div>
+                <div class="form-group"><label>Mobile Number</label><input type="tel" placeholder="Enter your mobile number" required></div>
+                <div class="form-group"><label>Email Address</label><input type="email" placeholder="Enter your email"></div>
+                <div class="form-group"><label>Service Required</label>
+                    <select required>
+                        <option value="">Select a service</option>
+                        <option value="manufacturing">Duct Manufacturing</option>
+                        <option value="installation">Duct Installation</option>
+                        <option value="hvac">HVAC Systems</option>
+                        <option value="fire-rated">Fire Rated Ducts</option>
+                        <option value="repair">Duct Repair</option>
+                        <option value="custom">Custom Fabrication</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Project Details</label><textarea placeholder="Describe your project requirements..."></textarea></div>
+                <button type="submit" class="btn-submit">Submit Quote Request</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close">&times;</button>
+        <img src="" alt="Gallery Image" id="lightboxImg">
+    </div>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => { navLinks.classList.remove('active'); });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); }
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) { backToTop.classList.add('visible'); } else { backToTop.classList.remove('visible'); }
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('active'); }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Modal functions
+        function openModal() { document.getElementById('quoteModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('quoteModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function handleQuote(e) { e.preventDefault(); alert('Thank you! Your quote request has been submitted. We will contact you shortly.'); closeModal(); }
+
+        // Lightbox functions
+        function openLightbox(src) { document.getElementById('lightboxImg').src = src; document.getElementById('lightbox').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = 'auto'; }
+
+        // Close modal on overlay click
+        document.getElementById('quoteModal').addEventListener('click', (e) => { if (e.target === e.currentTarget) closeModal(); });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+
+        // Animate stats on scroll
+        const statsBar = document.querySelector('.stats-bar');
+        let statsAnimated = false;
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !statsAnimated) {
+                    statsAnimated = true;
+                    document.querySelectorAll('.stat-number').forEach(stat => {
+                        const target = parseInt(stat.textContent);
+                        const suffix = stat.textContent.replace(/[0-9]/g, '');
+                        let current = 0;
+                        const increment = target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) { current = target; clearInterval(timer); }
+                            stat.textContent = Math.floor(current) + suffix;
+                        }, 30);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        if (statsBar) statsObserver.observe(statsBar);
+
+// Portrait & Landscape Images
+const portraitImage = "p.webp";
+const landscapeImage = "l.webp";
+
+const loaderImage = document.getElementById("preloaderImage");
+const preloader = document.getElementById("preloader");
+
+function updatePreloaderImage() {
+    if (window.innerHeight > window.innerWidth) {
+        loaderImage.src = portraitImage;
+    } else {
+        loaderImage.src = landscapeImage;
+    }
+}
+
+updatePreloaderImage();
+
+window.addEventListener("resize", updatePreloaderImage);
+
+window.addEventListener("load", function () {
+
+    setTimeout(function () {
+
+        preloader.classList.add("hide");
+
+    }, 1000);
+
+});
+
+</script>
+
+</body>
+</html>
